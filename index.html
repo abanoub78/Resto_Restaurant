@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resto</title>
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&#038;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-utensils"></i>
+          <h3><a href="#">Resto</a></h3>
+        </div>
+        <div class="nav">
+          <ul>
+            <li class="active"><a href="#" onclick="changeActiveLink(this)">Home</a></li>
+            <li><a href="#dishes" onclick="changeActiveLink(this)">Dishes</a></li>
+            <li><a href="#menu" onclick="changeActiveLink(this)">Menu</a></li>
+            <li><a href="#review" onclick="changeActiveLink(this)">Review</a></li>
+            <li><a href="#about" onclick="changeActiveLink(this)">About</a></li>
+            <li><a href="#order" onclick="changeActiveLink(this)">Order</a></li>       
+          </ul>
+        </div>
+        
+        <div class="icons">
+          <i class="mmenu fas fa-bars" style="color: #fcc00e; font-size: 20px; font-weight: bold;" onclick="toggleMenu2()" ></i>
+          <i class="fas fa-search" id="search-icon" onclick="toggleMenuSearch()"></i>
+          <a  class="  fas fa-heart" onclick="toggleMenu3()"></a>
+          <a  class="fas fa-shopping-cart MyCart" onclick="toggleMenu()" ></a>
+        </div>
+      </div>
+
+      <div class="search-menu-wrap" id="searchMenu"  style="overflow-y: auto;">
+        <div class="sub-menu">
+          <div id="root"></div>
+            <div class="user-info">
+              <input type="search" id="searchInput" oninput="filterResults()">
+                <i class="fas fa-redo clearSearch" style="color: #fcc00e;"></i>
+            </div>
+            <hr>
+          <div id="searchRes">Search Result Is Empty</div>
+           
+            <hr>
+
+        </div>
+    </div>
+
+      <div class="sub-menu-wrap" id="subMenu"  style="overflow-y: auto;">
+        <div class="sub-menu">
+          <div id="root"></div>
+            <div class="user-info">
+                <h3 id="profName"> My Cart </h3>
+                <i class="fas fa-redo clear" style="color: #fcc00e;"></i>
+            </div>
+            <hr>
+          <div id="cartitem">Your Cart Is Empty</div>
+           
+            <hr>
+            <div class="foot">
+              <h3>Total</h3>
+              <h3 id="price"> $0.00</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sub-menu-wrap" id="subMenu2"  style="overflow-y: auto;">
+      <div class="sub-menu">
+        <div id="root"></div>
+          <div class="user-info">
+              <h2 id="profName"> Favourites </h2>
+              <i class="fas fa-redo clear2" style="color: #fcc00e;"></i>
+          </div>
+          <hr>
+        <div id="cartitem2">Favorites list is empty</div>
+         
+
+
+      </div>
+  </div>
+
+      <div class="main-menu-warp">
+        <div class="sub-mmenu">
+            <ul class="nav">
+              <li class="active"><a href="#" onclick="changeActiveLink(this)">Home</a></li>
+              <li><a href="#dishes" onclick="changeActiveLink(this)">Dishes</a></li>
+              <li><a href="#menu" onclick="changeActiveLink(this)">Menu</a></li>
+              <li><a href="#review" onclick="changeActiveLink(this)">Review</a></li>
+              <li><a href="#about" onclick="changeActiveLink(this)">About</a></li>
+              <li><a href="#order" onclick="changeActiveLink(this)">Order</a></li>       
+            </ul>
+        </div>
+        </div>
+
+
+
+    </div>
+    <div class="landing">
+      <div class="container">
+        <div class="text">
+          <h3>Welcome in Resto</h3>
+        </div>
+      </div>
+    </div>
+
+    <i class="fas fa-arrow-up up"></i>
+
+    <div class="dishes" id="dishes">
+      <h2 class="main-title">Dishes</h2>
+      <div class="container">
+        <div class="box">
+          <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+          <img src="pics/dish-1.png" alt="">
+          <h2>Hamburger Compo </h2>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+          </div>
+          <div class="info">
+            <h3 class="price">15.00$</h3>
+            <input type="button" value="Add To Cart" class="addcart">
+          </div>
+        </div>
+        <div class="box">
+          <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+          <img src="pics/dish-2.png" alt="">
+          <h2> chicken nuggets</h2>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+          </div>
+          <div class="info">
+            <h3 class="price">25.00$</h3>
+            <input type="button" value="Add To Cart" class="addcart">
+          </div>
+        </div>
+        <div class="box">
+          <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+          <img src="pics/dish-3.png" alt="">
+          <h2>chicken</h2>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+          </div>
+          <div class="info">
+            <h3 class="price">32.00$</h3>
+            <input type="button" value="Add To Cart" class="addcart">
+          </div>
+        </div>
+
+        <div class="box">
+          <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+          <img src="pics/dish-4.png" alt="">
+          <h2>Pizza</h2>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+          </div>
+          <div class="info">
+            <h3 class="price">17.00$</h3>
+            <input type="button" value="Add To Cart" class="addcart">
+          </div>
+        </div>
+
+
+        <div class="box">
+          <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+          <img src="pics/dish-5.png" alt="">
+          <h2>chocolate</h2>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+          </div>
+          <div class="info">
+            <h3 class="price">25.00$</h3>
+            <input type="button" value="Add To Cart" class="addcart">
+          </div>
+        </div>
+
+        <div class="box">
+          <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+          <img src="pics/dish-6.png" alt="">
+          <h2>Chicken wings</h2>
+          <div class="rate">
+            <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+          </div>
+          <div class="info">
+            <h3 class="price">23.00$</h3>
+            <input type="button" value="Add To Cart" class="addcart">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="menu" id="menu">
+      <h2 class="main-title">Menu</h2>
+        <div class="container">
+          <div class="box">
+            <img src="pics/menu-1.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Margretta Pizza</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">15.99$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+          <div class="box">
+            <img src="pics/menu-2.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Hamburger Double</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">26.00$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+          <div class="box">
+            <img src="pics/menu-3.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Cheese pies</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">10.99$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+
+          <div class="box">
+            <img src="pics/menu-4.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Delicious Food1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">19.99$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+
+          <div class="box">
+            <img src="pics/menu-5.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Delicious Food2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">24.00$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+
+
+          <div class="box">
+            <img src="pics/menu-6.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Cup Cake</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">5.00$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+
+
+          <div class="box">
+            <img src="pics/menu-7.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>juice1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">7.99$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+
+
+          <div class="box">
+            <img src="pics/menu-8.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Fruts Salat</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">12.00$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+
+
+          <div class="box">
+            <img src="pics/menu-9.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>juice2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">11.99$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+          <div class="box">
+            <img src="pics/menu8.jpg" alt="">
+            <a  class=" red fas fa-heart" onclick="toggleMenu4(this)"></a>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <div class="text">
+              <h2>Fruts Cake</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="info">
+              <h3 class="price">13.99$</h3>
+              <input type="button" value="Add To Cart" class="addcart">
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+<!-- ******************************************************************************* -->
+<div class="review" id="review">
+  <h2 class="main-title">Review</h2>
+  <div class="container">
+    <div class="box">
+      <div class="head">
+          <img src="pics/pic-1.png" alt="">
+          <div class="text">
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          <h3>Jhon deo</h3>
+          </div>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illo eius commodi at quod sapiente atque natus fugiat? Veniam repudiandae fugiat officia molestiae</p>
+    </div>
+    <div class="box">
+      <div class="head">
+          <img src="pics/pic-2.png" alt="">
+          <div class="text">
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <h3>Jhon deo</h3>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illo eius commodi at quod sapiente atque natus fugiat? Veniam repudiandae fugiat officia molestiae</p>
+    </div>
+    <div class="box">
+      <div class="head">
+          <img src="pics/pic-3.png" alt="">
+          <div class="text">
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <h3>Jhon deo</h3>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illo eius commodi at quod sapiente atque natus fugiat? Veniam repudiandae fugiat officia molestiae</p>
+    </div>
+    <div class="box">
+      <div class="head">
+          <img src="pics/pic-4.png" alt="">
+          <div class="text">
+            <div class="rate">
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+              <i class="filled fas fa-star"></i>
+            </div>
+            <h3>Jhon deo</h3>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illo eius commodi at quod sapiente atque natus fugiat? Veniam repudiandae fugiat officia molestiae</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ************************************************************************************************* -->
+
+<div class="about" id="about">
+  <h2 class="main-title">Why Choose Us ?</h2>
+  <div class="container">
+    <div class="image">
+      <img src="pics/about-img.png" alt="">
+    </div>
+    <div class="text">
+      <h2>Best Food In Country</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, praesentium eligendi. Facilis, et suscipit ratione, quia totam recusandae </p>
+      <div class="btns">
+        <input type="button" value="Free Delivery">
+        <input type="button" value="Easy Payments">
+        <input type="button" value="Discounts">
+      </div>
+      <input type="submit" value="Learn More" class="send">
+    </div>
+  </div>
+</div>
+
+
+<!-- *********************************************************************************************** -->
+<div class="order" id="order">
+  <h2 class="main-title">Order Now </h2>
+  <div class="container">
+    <div class="col">
+      <ul>
+        <li>
+          <label>Your Name</label>
+           <input type="text" placeholder="Enter Your Name">   
+        </li>
+        <li>
+          <label>Your Order</label>
+           <input type="text" placeholder="Enter Food Name">   
+        </li>
+        <li>
+          <label>How Much</label>
+           <input type="text" placeholder="How Many Orders">   
+        </li>
+        <li>
+          <label>Your Address</label>
+           <textarea type="text" placeholder="Enter Your Adderdd"></textarea>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        <li>
+          <label>Your Number</label>
+           <input type="text" placeholder="Enter Your Number">   
+        </li>
+        <li>
+          <label>Additional Food</label>
+           <input type="text" placeholder="Extra With Food">   
+        </li>
+        <li>
+          <label>Date and Time</label>
+           <input type="date" placeholder="dd--mm-yy --:--">   
+        </li>
+        <li>
+          <label>Your Message</label>
+           <textarea type="text" placeholder="Enter Your Message"></textarea> 
+        </li>
+      </ul>
+    </div>
+   
+  </div>
+  <button>Order Now</button>
+</div>
+<!-- *********************************************************************************************** -->
+<div class="footer">
+  <div class="container">
+    <h3>Copyright&copy;2023 Eng : Abanoub Yousry</h3>
+  </div>
+</div>
+<script src="js/script.js"></script>
+
+  </body>
+</html>  
